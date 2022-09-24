@@ -18,9 +18,9 @@
             <input class="form-control w-100 mt-1" name="name" placeholder="" required>
         </div>
 
-        <label><input type="checkbox" name="orange" value="yes">みかん</label><br>
-        <label><input type="checkbox" name="grape" value="yes">ぶどう</label><br>
-        <label><input type="checkbox" name="apple" value="yes">りんご</label>
+        <label><input type="checkbox" name="orange" value="みかん">みかん</label><br>
+        <label><input type="checkbox" name="grape" value="ぶどう">ぶどう</label><br>
+        <label><input type="checkbox" name="apple" value="りんご">りんご</label>
 
         <p class="mt-3">TODO✅</p>
         <div>
@@ -81,11 +81,14 @@
         $(function () {
             $('form').submit(function () {
                 const name = $('input[name="name"]').val();
+                const orange = $('input[name="orange"]').val();
+                const grape = $('input[name="grape"]').val();
+                const apple = $('input[name="apple"]').val();
                 const udetate = $('input[name="udetate"]').val();
                 const fukkin = $('input[name="fukkin"]').val();
                 const haikin = $('input[name="haikin"]').val();
                 const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const msg = `${name}\n${orange}\n${grape}\n${apple}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
                 sendText(msg);
                 return false;
             });
